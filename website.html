@@ -1,0 +1,255 @@
+<!-- Chosen Palette: Modern Vibrant -->
+<!-- Application Structure Plan: The application's structure is redesigned to prioritize impact and scannability for recruiters. It begins with a "Hero" section for immediate identity. This is followed by a new "Highlights" section that uses quantitative achievements to immediately capture attention and demonstrate value. The core "Projects" section is next, with each project now reframed as a problem-solution narrative to showcase practical application of skills. The page then logically concludes with "Experience" and "Education" timelines to provide chronological context, and a clear "Contact" section. This new flow is designed to hook the recruiter with achievements, prove skills through projects, and then provide detailed context. -->
+<!-- Visualization & Content Choices: The portfolio continues to use structured HTML and Tailwind CSS to present information, focusing on a clean, professional layout. Key quantitative results from the resume (like "40% efficiency boost") are prominently featured in the new Highlights section to create a strong visual hierarchy. Icons are used to add visual interest and group related information. The project cards are reorganized to present a narrative of Challenge, Action, and Result, which is a powerful communication format for technical work. The experience and education sections use a simple timeline visual to make career progression easy to scan. No SVG or Chart.js/Plotly.js visualizations are needed for a resume-based content, as the goal is to present structured text effectively. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawahar Mahendran | Data Scientist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+        }
+        .section-title {
+            border-bottom: 3px solid #38a169;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+        .skill-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .project-card {
+             background-color: #ffffff;
+             border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">J. Mahendran</a>
+            <div class="hidden md:flex space-x-8 text-gray-600">
+                <a href="#projects" class="hover:text-green-600 transition-colors duration-300">Projects</a>
+                <a href="#experience" class="hover:text-green-600 transition-colors duration-300">Experience</a>
+                <a href="#education" class="hover:text-green-600 transition-colors duration-300">Education</a>
+                <a href="#skills" class="hover:text-green-600 transition-colors duration-300">Skills</a>
+                <a href="#contact" class="hover:text-green-600 transition-colors duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <a href="#projects" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Projects</a>
+            <a href="#experience" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Experience</a>
+            <a href="#education" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Education</a>
+            <a href="#skills" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Skills</a>
+            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="about" class="py-16 md:py-24 text-center">
+            <!-- Replace the image URL with your own profile picture URL -->
+            <img src="https://your-image-host.com/your-profile-pic.jpg" alt="Jawahar Mahendran" class="rounded-full shadow-lg w-40 h-40 md:w-48 md:h-48 object-cover mx-auto mb-8 border-4 border-white">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Jawahar Mahendran</h1>
+            <h2 class="text-2xl font-semibold text-green-600 mb-4">Data Scientist</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                A curious and driven data scientist who translates complex datasets into meaningful insights. Passionate about advancing digital innovation to improve efficiency and outcomes in the pharmaceutical space.
+            </p>
+            <!-- Add a button to download your resume -->
+            <a href="https://your-file-host.com/your-resume.pdf" download class="mt-8 inline-block bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-green-700 transition-colors duration-300">
+                <i class="fas fa-download mr-2"></i> Download Resume
+            </a>
+        </section>
+
+        <section id="highlights" class="py-16 md:py-24 bg-white rounded-lg shadow-md p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 section-title">Key Achievements</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">This section highlights key, quantifiable impacts from my professional experience, demonstrating my ability to deliver measurable results.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-green-600 mb-2">99%+</div>
+                    <div class="text-md font-semibold text-gray-800 text-center">Reduction in manual effort for technical documentation.</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-green-600 mb-2">40%</div>
+                    <div class="text-md font-semibold text-gray-800 text-center">Efficiency boost in NGS data analysis.</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl font-bold text-green-600 mb-2">15%</div>
+                    <div class="text-md font-semibold text-gray-800 text-center">Increase in R&D operational efficiency.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 section-title">Featured Projects</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">Dive into my projects to see how I apply my skills to solve real-world problems and drive impactful outcomes.</p>
+            <div class="space-y-12">
+                <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-8 rounded-lg shadow-sm overflow-hidden">
+                    <div class="md:col-span-2">
+                        <!-- Replace the image URL with your Project 1 image URL -->
+                        <img src="https://your-image-host.com/project-1-image.jpg" alt="NGS Data Analysis" class="w-full h-full object-cover rounded-md">
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">NGS Data Analysis Pipeline</h3>
+                        <p class="text-gray-600 mb-4"><strong>Challenge:</strong> Manual processing of large-scale multi-omics datasets was inefficient and time-consuming.</p>
+                        <p class="text-gray-600 mb-4"><strong>Action:</strong> Developed automated, scalable Snakemake pipelines and advanced visualizations to streamline data processing and distill complex genomic data into definitive conclusions.</p>
+                        <p class="text-gray-700 font-semibold mb-4"><strong>Result:</strong> Boosted efficiency by <span class="text-green-600 font-bold">40%</span>, significantly accelerating the research cycle.</p>
+                        <a href="https://github.com/jawa23bio" class="text-sm font-medium text-green-600 hover:text-green-500">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-8 rounded-lg shadow-sm overflow-hidden">
+                    <div class="md:col-span-2">
+                        <!-- Replace the image URL with your Project 2 image URL -->
+                         <img src="https://your-image-host.com/project-2-image.jpg" alt="DrosaGenXplorer" class="w-full h-full object-cover rounded-md">
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">DrosaGenXplorer</h3>
+                        <p class="text-gray-600 mb-4"><strong>Challenge:</strong> Non-technical scientists lacked the tools to independently perform exploratory data analysis on 100+ genomic datasets.</p>
+                        <p class="text-gray-600 mb-4"><strong>Action:</strong> Built a self-service analytics platform using R Shiny, empowering users to conduct PCA, t-SNE, and other analyses without writing code.</p>
+                        <p class="text-gray-700 font-semibold mb-4"><strong>Result:</strong> Enabled independent data exploration, allowing scientists to extract key biological insights and accelerate their research autonomously.</p>
+                        <a href="https://github.com/jawa23bio" class="text-sm font-medium text-green-600 hover:text-green-500">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+                 <div class="project-card grid grid-cols-1 md:grid-cols-5 gap-8 p-8 rounded-lg shadow-sm overflow-hidden">
+                    <div class="md:col-span-2">
+                        <!-- Replace the image URL with your Project 3 image URL -->
+                         <img src="https://your-image-host.com/project-3-image.jpg" alt="Diseasome Network Analysis" class="w-full h-full object-cover rounded-md">
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">Diseasome Network Analysis</h3>
+                        <p class="text-gray-600 mb-4"><strong>Challenge:</strong> Optimizing HPC workflows to mine disease-gene-phenotype relationships from public databases was a bottleneck.</p>
+                        <p class="text-gray-600 mb-4"><strong>Action:</strong> Architected a high-throughput pipeline to mine public databases and visualized the resulting network in Cytoscape.</p>
+                        <p class="text-gray-700 font-semibold mb-4"><strong>Result:</strong> Optimized HPC workflows, boosting analytical throughput by <span class="text-green-600 font-bold">80%</span>.</p>
+                        <a href="https://github.com/jawa23bio" class="text-sm font-medium text-green-600 hover:text-green-500">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 md:py-24 bg-white rounded-lg shadow-md p-8 md:p-12">
+             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 section-title">Professional Experience</h2>
+             <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">A chronological overview of my professional journey, highlighting my roles and contributions.</p>
+             <div class="max-w-3xl mx-auto">
+                <div class="relative border-l-2 border-green-600 pl-8 py-4">
+                     <div class="absolute w-4 h-4 bg-green-600 rounded-full -left-2 top-4 mt-1.5"></div>
+                     <p class="text-sm text-gray-500">Sep 2024 - Sep 2025</p>
+                     <h3 class="text-xl font-semibold text-gray-800">Data Science and Machine Learning Co-op</h3>
+                     <p class="text-md text-gray-600">GlaxoSmithKline, Collegeville, PA</p>
+                </div>
+                 <div class="relative border-l-2 border-gray-300 pl-8 py-4">
+                     <div class="absolute w-4 h-4 bg-gray-400 rounded-full -left-2 top-4 mt-1.5"></div>
+                     <p class="text-sm text-gray-500">Jun 2024 - Aug 2024</p>
+                     <h3 class="text-xl font-semibold text-gray-800">Data Science Intern - Bioinformatics & Multi-Omics</h3>
+                     <p class="text-md text-gray-600">Boston University Medical Campus, Boston, MA</p>
+                </div>
+                <div class="relative border-l-2 border-gray-300 pl-8 py-4">
+                     <div class="absolute w-4 h-4 bg-gray-400 rounded-full -left-2 top-4 mt-1.5"></div>
+                     <p class="text-sm text-gray-500">Jan 2024 - Aug 2024</p>
+                     <h3 class="text-xl font-semibold text-gray-800">Bioinformatics Research Analyst</h3>
+                     <p class="text-md text-gray-600">Boston University Medical Campus, Boston, MA</p>
+                </div>
+             </div>
+        </section>
+
+        <section id="education" class="py-16 md:py-24">
+             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 section-title">Education</h2>
+             <div class="max-w-3xl mx-auto">
+                 <div class="relative border-l-2 border-green-600 pl-8 py-4">
+                     <div class="absolute w-4 h-4 bg-green-600 rounded-full -left-2 top-4 mt-1.5"></div>
+                     <p class="text-sm text-gray-500">Sep 2023 - Sep 2024</p>
+                     <h3 class="text-xl font-semibold text-gray-800">Master of Science in Bioinformatics</h3>
+                     <p class="text-md text-gray-600">Boston University | Merit Scholarship | Grade: 3.8/4.0</p>
+                </div>
+                 <div class="relative border-l-2 border-gray-300 pl-8 py-4">
+                     <div class="absolute w-4 h-4 bg-gray-400 rounded-full -left-2 top-4 mt-1.5"></div>
+                     <p class="text-sm text-gray-500">Jun 2017 - May 2021</p>
+                     <h3 class="text-xl font-semibold text-gray-800">Bachelor of Technology in Industrial Biotechnology</h3>
+                     <p class="text-md text-gray-600">Anna University | Grade: 3.4/4.0</p>
+                </div>
+             </div>
+        </section>
+
+        <section id="skills" class="py-16 md:py-24 bg-white rounded-lg shadow-md p-8 md:p-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 section-title">Core Competencies</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto text-center">My technical skills are organized to allow recruiters to quickly identify my expertise across different domains.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="skill-card rounded-lg p-6 text-center">
+                    <div class="text-3xl text-green-600 mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Programming & Tools</h3>
+                    <p class="text-gray-600">R, Python, SQL, JavaScript, Bash, Git, Docker, Flask, CI/CD, Databricks</p>
+                </div>
+                <div class="skill-card rounded-lg p-6 text-center">
+                    <div class="text-3xl text-green-600 mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">DS, ML & Cloud</h3>
+                    <p class="text-gray-600">Predictive Modeling, Scikit-Learn, Statistical Inference, Azure, AWS, GenAI</p>
+                </div>
+                <div class="skill-card rounded-lg p-6 text-center">
+                    <div class="text-3xl text-green-600 mb-4"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Data Visualization</h3>
+                    <p class="text-gray-600">Spotfire, Power BI, R Shiny, Tableau, Cytoscape</p>
+                </div>
+                <div class="skill-card rounded-lg p-6 text-center">
+                    <div class="text-3xl text-green-600 mb-4"><i class="fas fa-dna"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Bioinformatics</h3>
+                    <p class="text-gray-600">RNA-seq, ATAC-seq, ChIP-seq, scRNA-seq, Nextflow, Snakemake</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 text-center bg-white rounded-lg shadow-md p-8 md:p-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Let's Connect</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team.
+            </p>
+            <div class="flex justify-center space-x-6 text-3xl md:text-4xl">
+                <a href="https://www.linkedin.com/in/Jawahar Mahendran" class="text-gray-500 hover:text-green-600 transition-colors duration-300">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/jawa23bio" class="text-gray-500 hover:text-green-600 transition-colors duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:mahendranjawahar@gmail.com" class="text-gray-500 hover:text-green-600 transition-colors duration-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <!-- Optional: A second resume download link for easy access -->
+                <a href="https://your-file-host.com/your-resume.pdf" download class="text-gray-500 hover:text-green-600 transition-colors duration-300">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-gray-600 text-center py-6">
+        <p>&copy; 2025 Jawahar Mahendran. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
